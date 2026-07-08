@@ -256,6 +256,21 @@ export const usePOSStore = create<POSStore>()(
         session: state.session,
         customers: state.customers,
       }),
+      // Función para convertir strings de fecha de vuelta a objetos Date al cargar
+      onRehydrateStorage: () => (state) => {
+        if (state) {
+          // Convertir fechas en ventas
+          state.sales = state.sales.map(sale => ({
+            ...sale,
+            date: new Date(sale.date),
+          }));
+          // Convertir fechas en cuentas aparcadas
+          state.heldTickets = state.heldTickets.map(ticket => ({
+            ...ticket,
+            date: new Date(ticket.date),
+          }));
+        }
+      },
     }
   )
 );

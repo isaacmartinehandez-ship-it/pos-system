@@ -2,8 +2,6 @@
 
 Sistema de punto de venta moderno y completo inspirado en SimplyGest.
 
-Repositorio: https://github.com/isaacmartinehandez-ship-it/pos-system
-
 ## Características
 
 - 🛒 **Punto de Venta (TPV)**: Interfaz intuitiva para realizar ventas rápidas
